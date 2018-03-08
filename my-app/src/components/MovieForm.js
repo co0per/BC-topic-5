@@ -30,7 +30,7 @@ class MovieForm extends Component {
 
   render() {
     return (
-      <div> 
+      <div className="form"> 
         <form>
           <h1 className="center_text">Insert movie</h1>  
           <label className="center_text">Title</label>

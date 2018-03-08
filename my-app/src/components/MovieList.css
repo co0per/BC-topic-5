@@ -1,0 +1,15 @@
+.graysection {
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	background: #dddddd;
+	font-family: sans-serif !important;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+}

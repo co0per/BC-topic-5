@@ -1,5 +1,5 @@
 import React from 'react';
-
+import MovieStyle from './MovieList.css'
 import MovListElement from './MovieListElement'
 
 function MovieList(props) {
@@ -9,17 +9,24 @@ function MovieList(props) {
     const movie_list = props.movies;
     const movie_element_list = movie_list.map((mov) =>
       <MovListElement key={mov.title.toString()}
-                value={mov.title} />
+                value={mov} />
     );
 
     return (
-      <ul>
-        {movie_element_list}
-      </ul>  
+      <div className="list">
+        <div className="graysection">
+          <h2>Created Movies</h2>
+          <ul>
+            {movie_element_list}
+          </ul>  
+        </div>
+      </div>
     );
   } else {
     return (
-      <h2>No movies created</h2>  
+      <div className="list">
+        <h2 className="graysection">No movies created</h2>
+      </div>
     );
   }
 }
