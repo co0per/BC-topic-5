@@ -18,11 +18,21 @@ class App extends Component {
   	this.setState({ movie_list: list });
   }
 
+  deleteMovie(movie){
+    let list = this.state.movie_list;
+    console.log(list);
+    let index = list.indexOf(movie);
+    if(index > -1) {
+        list.splice(index, 1);
+    }
+    this.setState({ movie_list: list });
+  }
+
   render() {
     return (
       <div>
         <MovieForm onInput={this.handleInput.bind(this)} />
-        <MovieList movies={this.state.movie_list} />
+        <MovieList movies={this.state.movie_list} deleteMov={this.deleteMovie.bind(this)} />
       </div>
     );
   }
