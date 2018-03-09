@@ -3,6 +3,12 @@ label {
 	color: #ddf2ff;
 }
 
+input.edit {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
 .movieatr {
 	display: inline;
 	color: white;

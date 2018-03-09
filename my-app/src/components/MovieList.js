@@ -8,12 +8,20 @@ class MovieList extends Component {
     this.props.deleteMov(movie);
   }
 
+  editMovie(obj){
+    this.props.editMov(obj);
+  }
+
   render(){
     if(this.props.movies.length > 0){
       const movie_list = this.props.movies;
       const movie_element_list = movie_list.map((mov) =>
-        <MovListElement key={mov.title.toString()}
-                  value={mov} deleteMov={this.deleteMovie.bind(this)} />
+        <MovListElement 
+          key={mov.title.toString()}
+          value={mov}
+          deleteMov={this.deleteMovie.bind(this)}
+          editMov={this.editMovie.bind(this)}
+        />
       );
 
       return (

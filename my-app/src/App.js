@@ -20,10 +20,20 @@ class App extends Component {
 
   deleteMovie(movie){
     let list = this.state.movie_list;
-    console.log(list);
     let index = list.indexOf(movie);
     if(index > -1) {
         list.splice(index, 1);
+    }
+    this.setState({ movie_list: list });
+  }
+
+  editMovie(obj){
+    let list = this.state.movie_list;
+    let index = list.indexOf(obj.old_mov);
+    if(index > -1) {
+        list[index].title = obj.new_title;
+        list[index].year = obj.new_year;
+        list[index].duration = obj.new_duration;
     }
     this.setState({ movie_list: list });
   }
@@ -32,7 +42,11 @@ class App extends Component {
     return (
       <div>
         <MovieForm onInput={this.handleInput.bind(this)} />
-        <MovieList movies={this.state.movie_list} deleteMov={this.deleteMovie.bind(this)} />
+        <MovieList 
+          movies={this.state.movie_list} 
+          deleteMov={this.deleteMovie.bind(this)} 
+          editMov={this.editMovie.bind(this)}
+        />
       </div>
     );
   }
